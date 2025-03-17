@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AWS S3 File Manager</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1 class="title">AWS S3 File Manager</h1>
+
+      <div class="grid">
+        <!-- File Upload Section -->
+        <div class="upload-section">
+          <div class="card">
+            <div class="card-header">
+              <h2 class="card-title">Upload File to S3</h2>
+              <p class="card-description">Select a file to upload to your AWS S3 bucket</p>
+            </div>
+            <div class="card-content">
+              <form id="upload-form" class="space-y">
+                <div class="form-group">
+                  <label for="file-upload">File</label>
+                  <input id="file-upload" type="file" />
+                </div>
+                <button type="submit" id="upload-button" class="button button-primary">
+                  <span class="button-content">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                      <polyline points="17 8 12 3 7 8"></polyline>
+                      <line x1="12" y1="3" x2="12" y2="15"></line>
+                    </svg>
+                    Upload to S3
+                  </span>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- File List Section -->
+        <div class="file-list-section">
+          <h2 class="section-title">Your Files</h2>
+          <p class="section-description">
+            Manage your files stored in AWS S3. You can download files or change their access permissions.
+          </p>
+          <div class="table-container">
+            <table id="file-table">
+              <thead>
+                <tr>
+                  <th>File Name</th>
+                  <th>Size</th>
+                  <th>Last Modified</th>
+                  <th>Access</th>
+                  <th class="actions-header">Actions</th>
+                </tr>
+              </thead>
+              <tbody id="file-list">
+                <tr class="empty-state">
+                  <td colspan="5">Loading files...</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Toast Container -->
+    <div id="toast-container"></div>
+
+    <!-- fill sdk url into below code -->
+    <!-- <script src="..."></script> -->
+    <script src="script.js"></script>
+  </body>
+</html>
